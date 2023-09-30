@@ -4,5 +4,57 @@
     /*border: 2px solid red;*/
     justify-content: center;
     align-items: center;
-    width: 30%;
+    width: 90%;
+    height: 24rem;
+}
+
+.paper{
+    width: 80%;
+    height: 100%;
+    /*border: 2px solid #2eee00;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+}
+
+
+/* AudioRecording.css */
+
+.controls {
+    width: 100%;
+    margin-top: 10px;
+    padding: 2rem 0;
+}
+@media (max-width: 600px) {
+    .controls {
+        width: 140%; /* Example: reduce width to 80% for smaller screens */
+    }
+}
+
+
+/* Style the play/pause button */
+.controls::-webkit-media-controls-play-button {
+    background-color: #2196F3; /* Green */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+}
+
+/* Style the volume button */
+.controls::-webkit-media-controls-volume-slider {
+    width: 50px;
+}
+
+/* Style the progress bar */
+.controls::-webkit-media-controls-progress {
+    background-color: #2196F3; /* Blue */
+}
+
+/* Style the progress bar thumb */
+.controls::-webkit-media-controls-current-time-display,
+.controls::-webkit-media-controls-time-remaining-display {
+    color: #2196F3; /* Blue */
 }

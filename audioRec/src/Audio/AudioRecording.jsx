@@ -3,7 +3,7 @@ import MicRecorder from "mic-recorder-to-mp3";
 import axios from "axios";
 import './AudioRecording.css';
 import {Button, ButtonGroup, Paper, Typography} from "@mui/material";
-import {setOriginalAudio} from "../features/audioSlice";
+import {postAudioDataAsync, setBaseAudio, setOriginalAudio} from "../features/audioSlice";
 import { useDispatch } from 'react-redux';
 
 const Mp3Recorder = new MicRecorder({bitRate: 128});
@@ -56,7 +56,7 @@ const AudioRecording = () => {
                 baseAudio = baseAudio.replace(/^data:audio\/mp3;base64,/, ''); // Remove the data URI prefix if present
 
                 setAudioDataState(baseAudio)
-                // dispatch(setOriginalAudio(baseAudio));
+                dispatch(setBaseAudio(baseAudio));
                 // Post the correctly encoded audio data to the server
                 // postAudioData(baseAudio);
 
@@ -75,24 +75,21 @@ const AudioRecording = () => {
         });
     };
 
-    const postAudioData = async () => {
-        try {
-            // console.log(baseAudio);
-            // Replace with your server endpoint
-            const response = await axios.post("http://localhost:5000/audio", {
-                audioData: audioDataState,
-            });
-
-            console.log("Audio data posted successfully:", response.data);
-        } catch (error) {
-            console.error("Error posting audio data:", error);
-        }
-    };
+    // const postAudioData = () => {
+    //     dispatch(postAudioDataAsync(audioDataState))
+    //         .unwrap()
+    //         .then((data) => {
+    //             console.log("Audio data posted successfully:", data);
+    //         })
+    //         .catch((error) => {
+    //             console.error("Error posting audio data:", error);
+    //         });
+    // };
 
     return (
         <div className={"input-body"}>
             <Paper elevation={3} className={"paper"}>
-                <Typography variant={"h3"}>Speak Up!</Typography>
+                <Typography variant={"h3"} fontSize={"2rem"}>Speak Up!</Typography>
                 <audio src={blobURL} controls="controls" className={"controls"}/>
                 <div className={"control-button"}>
 
@@ -100,7 +97,7 @@ const AudioRecording = () => {
                         <Button variant="contained" onClick={isRecording ? stop : start}>
                             {isRecording ? "Stop" : "Record"}
                         </Button>
-                        <Button onClick={postAudioData}>Submit</Button>
+                        {/*<Button onClick={postAudioData}>Submit</Button>*/}
                     </ButtonGroup>
 
                 </div>
