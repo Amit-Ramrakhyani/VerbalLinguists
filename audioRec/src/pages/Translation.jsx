@@ -1,5 +1,5 @@
-import AudioRecording from "../Audio/AudioRecording";
-import EnglishOutput from "../Audio/EnglishOutput";
+import AudioRecording from "../Components/Audio/AudioRecording";
+import EnglishOutput from "../Components/Audio/EnglishOutput";
 import { Grid, Button, useMediaQuery, Typography} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchEnglishTranslationAsync, postAudioDataAsync} from "../features/audioSlice";
@@ -70,6 +70,9 @@ const Translation = () => {
                     </div>
                 )}
             </div>
+
+
+            {/*<Typography>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A assumenda autem beatae commodi cum, cumque debitis dolor doloribus expedita facilis harum incidunt ipsam ipsum, iste libero maxime nisi nobis quaerat quas quod quos ratione repellat sed sunt suscipit velit veniam! Deleniti distinctio doloremque dolorum ducimus explicabo in laborum minus molestias nobis nostrum perspiciatis provident sed sit, tempora voluptate voluptatem voluptatum.</Typography>*/}
         </>
 
     );

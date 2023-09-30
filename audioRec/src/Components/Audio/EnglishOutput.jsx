@@ -1,9 +1,6 @@
 import './EnglishOutput.css'
-import {Button, Paper, Typography} from "@mui/material";
-import React, {useState} from "react";
-import axios from "axios";
-import {useDispatch, useSelector} from "react-redux";
-import {setEnglishAudio, setEnglishText, setRegionalText} from "../features/audioSlice";
+import { Paper, Typography} from "@mui/material";
+import { useSelector} from "react-redux";
 
 const EnglishOutput = () => {
     const englishAudioState = useSelector(state => state.audio.englishAudio); // Accessing englishAudio from Redux store
@@ -15,7 +12,6 @@ const EnglishOutput = () => {
 
                 <audio src={englishAudioState} controls="controls" className={"controls"}/>
 
-                {/*<Button onClick={getEnglishTranslation}>Get Translation</Button>*/}
             </Paper>
         </div>
 
