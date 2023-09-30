@@ -25,8 +25,10 @@ export const fetchEnglishTranslationAsync = createAsyncThunk(
             const blobUrl = URL.createObjectURL(blob);
 
             dispatch(setEnglishAudio(blobUrl));
-            dispatch(setEnglishText(response.data.regional_text));
-            dispatch(setRegionalText(response.data.english_text));
+            dispatch(setEnglishText(response.data.english_text));
+            dispatch(setRegionalText(response.data.regional_text));
+            dispatch(setLangCode(response.data.lang_code));
+            dispatch(setLanguageName(response.data.language_name))
 
             // Return response data if needed
             return response.data;
@@ -65,6 +67,8 @@ const audioSlice = createSlice({
         englishAudio: null,
         regionalText: null,
         englishText: null,
+        langCode: null,
+        languageName: null,
         status: "idle", // idle, loading, succeeded, failed
         error: null,
     },
@@ -83,6 +87,12 @@ const audioSlice = createSlice({
         },
         setEnglishText: (state, action) => {
             state.englishText = action.payload;
+        },
+        setLangCode: (state, action) => {
+            state.langCode = action.payload;
+        },
+        setLanguageName: (state, action) => {
+            state.languageName = action.payload;
         },
     },
     extraReducers: (builder) => {
@@ -119,6 +129,8 @@ export const {
     setRegionalText,
     setEnglishText,
     setBaseAudio,
+    setLangCode,
+    setLanguageName,
 } = audioSlice.actions;
 
 export const selectAudioData = (state) => state.audio;

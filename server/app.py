@@ -15,7 +15,7 @@ def hello_world():
 @app.route('/audio', methods=['POST'])
 def create_audio():
     data = request.json
-    print(data)
+#     print(data)
 
     # Check if 'audioData' is in the request JSON
     if 'audioData' in data:
@@ -51,7 +51,9 @@ def send_result():
     result = {
         'translated_audio' : base64_audio,
         'regional_text' : "बलसरा वत्सल नाम याद रखना",
-        'english_text' :  "Balasra Vatsal, remember efff ffContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.f, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Ri Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of  (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, comes from a line in section 1.10.32. name"
+        'english_text' :  "Balasra Vatsal, remember the name",
+        'lang_code' : "hi",
+        'language_name' : "Hindi",
     }
     return result
 

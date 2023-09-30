@@ -3,6 +3,7 @@ import EnglishOutput from "../Components/Audio/EnglishOutput";
 import { Grid, Button, useMediaQuery, Typography} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchEnglishTranslationAsync, postAudioDataAsync} from "../features/audioSlice";
+import OgAndTranslated from "../Components/Text/OgAndTranslated";
 
 const Translation = () => {
     const baseAudioState = useSelector(state => state.audio.baseAudio)
@@ -33,8 +34,11 @@ const Translation = () => {
 
     return (
         <>
-            <Typography variant="h2" sx={{ marginBottom: "2rem" }}>
+            <Typography variant="h2" sx={{ marginBottom: "1rem" }}>
                 Verbal Linguists
+            </Typography>
+            <Typography variant="body1" sx={{ marginBottom: "1rem" }} px={{sm: "1rem", md: "3rem"}}>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consequuntur ex neque repudiandae! Est facilis in saepe sunt? Autem consequatur cum, cumque delectus dolore earum et ipsam ipsum obcaecati odit omnis quod recusandae repellat sit totam ut vero voluptate voluptatum!
             </Typography>
 
             <div style={{ padding: "1rem" }}>
@@ -45,7 +49,7 @@ const Translation = () => {
                                 <AudioRecording />
                             </Grid>
                         </Grid>
-                        <Button sx={{ marginBottom: "4rem" }} size="large" variant="contained" onClick={postAudioData}>
+                        <Button sx={{ marginBottom: "3rem" }} size="large" variant="contained" onClick={postAudioData}>
                             Translate
                         </Button>
                         <Grid container justifyContent="center" >
@@ -64,15 +68,15 @@ const Translation = () => {
                                 <EnglishOutput />
                             </Grid>
                         </Grid>
-                        <Button sx={{ marginY: "3rem" }} size="large" variant="contained" onClick={postAudioData}>
+                        <Button sx={{ marginY: "2rem" }} size="large" variant="contained" onClick={postAudioData}>
                             Translate
                         </Button>
                     </div>
                 )}
             </div>
 
+            <OgAndTranslated/>
 
-            {/*<Typography>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A assumenda autem beatae commodi cum, cumque debitis dolor doloribus expedita facilis harum incidunt ipsam ipsum, iste libero maxime nisi nobis quaerat quas quod quos ratione repellat sed sunt suscipit velit veniam! Deleniti distinctio doloremque dolorum ducimus explicabo in laborum minus molestias nobis nostrum perspiciatis provident sed sit, tempora voluptate voluptatem voluptatum.</Typography>*/}
         </>
 
     );

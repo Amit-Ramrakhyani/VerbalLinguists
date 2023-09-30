@@ -75,7 +75,7 @@ const AudioRecording = () => {
     };
 
     return (
-        <div className={"input-body"}>
+        <div className={"put-body"}>
             <Paper elevation={3} className={"paper"}>
                 <Typography variant={"h3"} fontSize={"2rem"}>Speak Up!</Typography>
                 <audio src={blobURL} controls="controls" className={"controls"}/>
