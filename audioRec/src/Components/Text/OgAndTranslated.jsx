@@ -2,8 +2,7 @@ import * as React from 'react';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import {Typography} from "@mui/material";
-import {useDispatch, useSelector} from "react-redux";
-import store from "../../store";
+import {useSelector} from "react-redux";
 
 
 export default function OgAndTranslated() {
