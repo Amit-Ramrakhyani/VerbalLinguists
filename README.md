@@ -1,6 +1,6 @@
 # VERBAL LINGUISTS
 
-Built by- Amit Ramrakhyani, Mit Kumar Patel, Vatsal Balasra, Tithi Dangarwala, Bhavya Shah and Varzil Thakkar
+Built by - Amit Ramrakhyani, Mit Kumar Patel, Vatsal Balasra, Tithi Dangarwala, Bhavya Shah, and Varzil Thakkar
 
 Problem Statement: Speech to text transcription for Indian languages. The problem entails transcription in the native script and then translation to English. The languages of interest are Hindi, Indian English, Urdu, Bengali, Punjabi.
 
@@ -75,9 +75,7 @@ The flow of the execution of program includes following steps:
 6. Translating it to **English Language Text**
 7. Transcripting it to **English Language Audio** 
 
-"in steps mein we can include using this or that library"
-
-"flow chart idhar aayega"
+![Working_SIH drawio (1)](https://github.com/user-attachments/assets/ff903dc9-15cc-40bf-8df0-4d732147e4e4)
 
 # Fine-tuning
 
@@ -167,8 +165,6 @@ fairseq-hydra-train task.data=${PWD}"/workshop-2022/asr_data/noa_training_1hr/ma
 # Issues Faced during Output
 
 Issues can be found during the translation of Urdu Audio. Urdu has a lot of similarities to Hindi which makes it hard for the model to recognize the language.
-
-Also Indian English is not inluded..."iska mein aage likh rahi hu"
 
 
 
